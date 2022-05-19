@@ -1,0 +1,36 @@
+<mat-card class="mt20">
+    <mat-action-list>
+        <div mat-subheader>
+            <mat-icon mat-list-icon>menu</mat-icon>
+            <span class="menu ml10"><b>Menu</b></span>
+        </div>
+
+        <button mat-list-item routerLink="/user-dashboard">
+            <mat-icon mat-list-icon>home</mat-icon><span class="heading"><b>Home</b></span>
+        </button>
+        <!-- <button mat-list-item routerLink="/user-dashboard/about">
+            <mat-icon mat-list-icon>about</mat-icon>About
+        </button> -->
+        <!-- <button mat-list-item routerLink="/user-dashboard/contact">
+            <mat-icon mat-list-icon>about</mat-icon>Contact Us
+        </button> -->
+        <button mat-list-item routerLink="/user-dashboard/profile">
+            <mat-icon mat-list-icon>account_circle</mat-icon><span class="heading"><b>Profile</b></span>
+        </button>
+        <button mat-list-item routerLink="/user-dashboard/category">
+            <mat-icon mat-list-icon>category</mat-icon>Categories
+        </button>
+        <button mat-list-item routerLink="/user-dashboard/quiz/0">
+            <mat-icon mat-list-icon>quiz</mat-icon>All Quizzes
+        </button>
+        <button mat-list-item routerLink="/user-dashboard/all-attempt">
+            <mat-icon mat-list-icon>check_circle</mat-icon>All Attempts
+        </button>
+        <button mat-list-item (click)="logout()">
+            <mat-icon mat-list-icon>logout</mat-icon>Logout
+        </button>
+
+
+    </mat-action-list>
+</mat-card>
+

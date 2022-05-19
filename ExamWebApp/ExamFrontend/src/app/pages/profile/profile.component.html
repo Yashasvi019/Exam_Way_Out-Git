@@ -1,0 +1,89 @@
+<mat-card class="mt20 mr20" *ngIf="user">
+    
+    <mat-card-header style="display: flex; justify-content: center;">
+        <div mat-card-avatar class='header-image'></div>
+        <mat-card-title style="text-decoration: 1.5px wavy underline;font-family: 'Noto Serif', serif;">
+            <h1>Your Profile</h1>
+        </mat-card-title>
+    </mat-card-header>
+
+<!-- {{user | json}} -->
+
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+
+            <div class="container">
+
+                <img class="profile-image mt20"  style="display: flex; margin: auto; " 
+                src="../../../assets/DefaultProfilePicture.jpg" 
+                alt=""/>
+                <h1 class="profile-name mt20 mb20" >{{ user.firstName }} {{ user.lastName }}</h1>
+
+            </div>
+
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-10 offset-md-1 mb20 mt10">
+
+                        <table class="table">
+                            
+                            <tr>
+                                <td>User Id</td>
+                                <td>{{ user.id }}</td>
+                            </tr>
+                            <tr>
+                                <td>Username</td>
+                                <td>{{ user.username }}</td>
+                            </tr>
+                            <tr>
+                                <td>Role</td>
+                                <td>{{ user.authorities[0].authority }}</td>
+                            </tr>
+                            <tr>
+                                <td>First Name</td>
+                                <td>{{ user.firstName }}</td>
+                            </tr>
+                            <tr>
+                                <td>Last Name</td>
+                                <td>{{ user.lastName }}</td>
+                            </tr>
+                            <tr>
+                                <td>Email Id</td>
+                                <td>{{ user.email }}</td>
+                            </tr>
+                            <tr *ngIf="user.phoneNumber">
+                                <td>Phone Number</td>
+                                <td>{{ user.phoneNumber }}</td>
+                            </tr>
+                            <tr *ngIf="user.gender">
+                                <td>Gender</td>
+                                <td>{{ user.gender=="F"?"Female":"Male" }}</td>
+                            </tr>
+                            <tr>
+                                <td>Status</td>
+                                <td>{{ user.enabled==1?"ACTIVE":"NOT AACTIVE" }}</td>
+                            </tr>
+                            <tr *ngIf="user.about">
+                                <td>About</td>
+                                <td>{{ user.about }}</td>
+                            </tr>
+                            
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </mat-card-content>
+
+    <mat-card-actions class="button mb20">
+        <button class="mr20" 
+        (click)="UpdateClicked()"
+        mat-raised-button 
+        style="background-color:#f57f17; color: white;"
+        >Update</button>
+    </mat-card-actions>
+
+</mat-card>

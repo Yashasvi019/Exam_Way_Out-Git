@@ -1,0 +1,72 @@
+<mat-card class="mt20 mb20" style="padding-bottom:5px;">
+
+    <div class="main-header">
+        <mat-card-header>
+            <div mat-card-avatar class='header-image'></div>
+            <mat-card-title style="text-decoration: 1.5px wavy underline; font-family: 'Noto Serif', serif;">
+                <h1>All Quizzes</h1>
+            </mat-card-title>
+        </mat-card-header>
+    </div>
+    <!-- {{quizzes | json}} -->
+</mat-card>
+
+<div class="container mb20" style="text-align:left;">
+    <button mat-raised-button color="warn" routerLink="/admin-dashboard/add-quiz">
+        Add New Quiz
+    </button>
+</div>
+
+<mat-card *ngFor="let q of quizzes" class="mr5 ml5 mb5">
+    <mat-card-header>
+        <div mat-card-avatar class='image'></div>
+        <mat-card-title style="text-decoration: 1px solid underline; font-family:'Courgette', cursive; font-size: 1.5rem;">
+            {{q.title}}
+        </mat-card-title>
+        <mat-card-subtitle >
+            <b><i>{{ q.category.title }}</i></b>
+        </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+        <p style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size:1rem;">
+            {{ q.description }}
+        </p>
+    </mat-card-content>
+
+    <div class="container mt20 mb10 button">
+        
+        <button class="ml20 mt10" mat-flat-button style="background-color:hsl(160, 92%, 33%); color: white;" 
+        *ngIf="q.active==true">Published</button>
+
+        <button class="ml20 mt10" mat-flat-button style="background-color:#f57f17; color: white;">
+            Max Marks: {{ q.maxMarks }}</button>
+
+        <button class="ml20 mt10" mat-flat-button style="background-color:#f57f17; color: white;">
+            Total Questions: {{ q.numberOfQuestions }}</button>
+
+        <button class="ml20 mt10" mat-raised-button style="background-color:#e65100; color: white;" 
+        [routerLink]="'/admin-dashboard/view-questions/'+q.quizid+'/'+q.title">All Questions</button>
+
+        <button class="ml20 mt10" mat-raised-button style="background-color:#e65100; color: white;" 
+        [routerLink]="'/admin-dashboard/quiz/'+q.quizid">Update</button>
+
+        <button class="ml20 mt10" mat-raised-button style="background-color:#e65100; color: white;" 
+        (click)="deleteQuiz(q.quizid)">Delete</button>
+
+        <button class="ml20 mt10" mat-raised-button style="background-color:#e65100; color: white;" 
+        [routerLink]="'/admin-dashboard/attempts/'+q.quizid">Total Attempts</button>   
+    
+    </div>
+    
+</mat-card>
+
+
+<mat-card *ngIf="!quizzes.length" class="mr5 ml5 mb5">
+    <mat-card-header>
+        <div mat-card-avatar class='sad-image'></div>
+        <p class="ml10" style="font-family: 'Courgette', cursive; font-size: 1.5rem; text-decoration: 1px solid underline;">
+            No Quizzes Avialable!!!
+        </p>
+    </mat-card-header>
+</mat-card>

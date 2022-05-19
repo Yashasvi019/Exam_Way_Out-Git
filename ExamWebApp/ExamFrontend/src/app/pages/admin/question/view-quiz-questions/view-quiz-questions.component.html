@@ -1,0 +1,77 @@
+<mat-card class="mt20 mb10">
+
+    <div class="main-heading">
+        <div mat-card-avatar class='header-image'></div>
+        <h1 style="text-decoration: 1.5px wavy underline; font-family: 'Noto Serif', serif;">All Questions of {{ quizTitle }}</h1> 
+    </div>
+    
+</mat-card>
+
+<div class="container mt20 mb20" style="text-align:left; padding: 5px 5px 5px 5px;">
+    <button mat-raised-button color="warn" [routerLink]="'/admin-dashboard/add-question/'+quizId+'/'+quizTitle">
+        <mat-icon class="mr10">add_circle</mat-icon>  
+        Add New Question 
+    </button>
+</div>
+
+<mat-card class="mr5 ml5 mt5" *ngFor="let q of questions; let i=index">
+    
+    <mat-card-content>
+
+      <div> <p><b>Q{{i+1}}) </b> <span class="ml20" [innerHTML]="q.content"></span></p> </div>
+
+       <div class="container-fluid">
+
+           <div class="row">
+               <div class="col-md-6">
+                   <p>a) {{ q.option1 }}</p>
+               </div>
+               <div class="col-md-6">
+                <p>b) {{ q.option2 }}</p>
+               </div>
+           </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <p>c) {{ q.option3 }}</p>
+                </div>
+                <div class="col-md-6">
+                 <p>d) {{ q.option4 }}</p>
+                </div>
+           </div>
+
+           <mat-divider></mat-divider>
+           <div class="mt10 mb5">
+            <p><b>Correct Answer: </b><i>{{q.answer}}</i></p>
+           </div>
+
+           <div class="button">
+
+            <button mat-raised-button style="background-color:#e65100; color: white;" 
+            [routerLink]="'/admin-dashboard/question/'+q.quesid">Update</button>   
+            <button class="ml20" mat-raised-button style="background-color:#e65100; color: white;" 
+            (click)="deleteQuestion(q.quesid)">Delete</button> 
+            
+        </div>
+
+        </div>
+        
+    </mat-card-content>
+
+    
+    
+</mat-card>
+
+<div class="mb20"></div>
+
+
+<mat-card *ngIf="!questions.length" class="mr5 ml5 mb5">
+    <mat-card-header>
+        <div mat-card-avatar class='sad-image'></div>
+        <p class="ml10" style="font-family: 'Courgette', cursive; font-size: 1.5rem; text-decoration: 1px solid underline;">
+            No Questions Avialable!!!
+        </p>
+    </mat-card-header>
+</mat-card>
+
+

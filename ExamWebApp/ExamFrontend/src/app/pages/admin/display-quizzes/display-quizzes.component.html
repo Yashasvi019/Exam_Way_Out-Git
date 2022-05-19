@@ -1,0 +1,55 @@
+<mat-card class="mt20">
+    
+    <mat-card-header style="display: flex; justify-content: center;">
+        <div mat-card-avatar class='header-image'></div>
+        <mat-card-title style="text-decoration: 1.5px wavy underline; font-family: 'Noto Serif', serif;">
+            <h1>All Quizzes</h1>
+        </mat-card-title>
+    </mat-card-header>
+
+<!-- {{quizzes|json}} -->
+
+    <mat-card-content *ngIf="quizzes">
+        <div class="bootstrap-wrapper">
+
+            <div class="container">
+
+                <div class="row">
+                    <div class="mb20 mt10">
+
+                        <table class="table">
+
+                            <tr>
+                                <th>Quiz Id</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Maximum Marks</th>
+                                <th>Total Number Of Questions</th>
+                                <th>Category Title</th>
+                                <th>Published</th>
+                              </tr>
+                            
+                            <tr *ngFor="let q of quizzes;">
+                                <td>QUIZ{{q.quizid}}</td>
+                                <td>{{q.title}}</td>
+                                <td>{{q.description}}</td>
+                                <td>{{q.maxMarks}}</td>
+                                <td>{{q.numberOfQuestions}}</td>
+                                <td>{{q.category.title}}</td>
+                                <td>{{q.active==true?"Published":"Not Published"}}</td>
+                            </tr>
+                            
+                        </table>
+                    </div>
+
+                    <button class="button mb20" mat-raised-button (click)="printPage()" style="background-color:#e65100; color: white;">Print</button>
+
+                </div>
+
+            </div>
+
+        </div>
+    </mat-card-content>
+
+</mat-card>
+

@@ -1,0 +1,62 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <mat-card class="mt20 mb20">
+                    <!-- heading -->
+                    <mat-card-header>
+                        <mat-card-title class="main-heading">
+                            <b>Read the instructions carefully!!</b>
+                        </mat-card-title>
+                        <mat-card-subtitle>
+                            <b><i>One step more to go....</i></b>
+                        </mat-card-subtitle>
+                    </mat-card-header>
+                    <!-- content -->
+                    <mat-card-content class="ml20">
+                        <h1 style="text-decoration: 1px solid underline; font-family:'Courgette', cursive; font-size: 1.5rem; color: #f07070;">
+                            <b>{{quiz.title}}</b>
+                        </h1>
+                        <p style="font-family: 'Cookie', cursive; font-size: 1.5rem; color: #f18383 ;">
+                            <i>{{quiz.description}}</i>
+                        </p>
+                        <mat-divider></mat-divider>
+                        <br>
+                        <h1 style="color: rgb(197, 5, 5); text-decoration: 1px solid underline; font-family: 'Noto Serif', serif;">Important Instructions...</h1>
+                        <ul style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size:1rem;">
+                            <li>This quiz is only for practise purpose.</li>
+                            <li>You have to submit quiz within time limit.</li>
+                            <li>You can attempt quiz any number of times.</li>
+                            <li>All Questions are MCQ's based.</li>
+                            <li>There's a time limit for every quiz.</li>
+                            <li>Time limit will depend on number of questions.</li>
+                            <li>There are <b style="color: #4190f7;">{{quiz.numberOfQuestions}} questions</b> in this quiz.</li>
+                            <li>Each question carries <b style="color: #4190f7;">{{quiz.maxMarks/quiz.numberOfQuestions}} Marks</b>.</li>
+                            <li>There's no negative marking for wrong answers.</li>
+                            <li>Your time limit is: <b style="color: #4190f7;">{{quiz.numberOfQuestions * 2}} minutes.</b></li>
+                            <!-- assuming time limit for each question to be 2 mins -->
+                        </ul>
+                        <mat-divider></mat-divider>
+                        <br>
+                        <h1 style="color: rgb(197, 5, 5); text-decoration: 1px solid underline; font-family: 'Noto Serif', serif;">Attempting Quiz</h1>
+                        <ul style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size:1rem;">
+                            <li>Click <b style="color: #4190f7;">Start Quiz</b> button to start the Quiz.</li>
+                            <li>The time will start the moment you click the Start Quiz button.</li>
+                            <li>You cannot resume this quiz, if interrupted due to any reason.</li>
+                            <li>Scroll down to move to next question.</li>
+                            <li>Click on <b style="color: #4190f7;">Submit Quiz</b> button on completion of the quiz.</li>
+                            <li>Report of the test is automatically generated in the form of PDF copy.</li>
+                            <li>Now, you can attempt your Quiz.</li>
+                        </ul>
+                    </mat-card-content>
+                    <!-- actions -->
+                    <mat-card-actions class="button mt10 mb10">
+                        <button (click)="startQuiz()" color="warn" mat-raised-button>
+                            Start Quiz
+                        </button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

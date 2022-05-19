@@ -1,0 +1,59 @@
+<mat-card class="mt20">
+    
+    <mat-card-header style="display: flex; justify-content: center;">
+        <div mat-card-avatar class='header-image'></div>
+        <mat-card-title style="text-decoration: 1.5px wavy underline;font-family: 'Noto Serif', serif;">
+            <h1>All Users</h1>
+        </mat-card-title>
+    </mat-card-header>
+
+<!-- {{users | json}} -->
+
+    <mat-card-content *ngIf="users">
+        <div class="bootstrap-wrapper">
+
+            <div class="container">
+
+                <div class="row">
+                    <div class="mb20 mt10">
+
+                        <table class="table">
+
+                            <tr>
+                                <th>User Id</th>
+                                <th>Username</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>E-mail Id</th>
+                                <th>Phone Number</th>
+                                <th>Gender</th>
+                                <th>About</th>
+                                <th>Authority</th>
+                            </tr>
+                            
+                            <tr *ngFor="let u of users;">
+                                <td>EXAM{{u.id}}</td>
+                                <td>{{u.username}}</td>
+                                <td>{{u.firstName}}</td>
+                                <td>{{u.lastName}}</td>
+                                <td>{{u.email}}</td>
+                                <td>{{u.phoneNumber}}</td>
+                                <td>{{u.gender=="F"?"Female":"Male"}}</td>
+                                <td>{{u.about}}</td>
+                                <td>{{u.authorities[0].authority}} User</td>
+                            </tr>
+                            
+                        </table>
+                    </div>
+
+                    <button class="button mb20" mat-raised-button (click)="printPage()" style="background-color:#e65100; color: white;">Print</button>
+
+                </div>
+
+            </div>
+
+        </div>
+    </mat-card-content>
+
+</mat-card>
+

@@ -1,0 +1,70 @@
+<mat-card class="mt20" *ngIf="categories.length">
+    <mat-list>
+        <div>
+            <mat-card-header style="display: flex; justify-content: center;">
+                <div mat-card-avatar class='header-image'></div>
+                <mat-card-title style="text-decoration: 1.5px wavy underline; font-family: 'Noto Serif', serif;">
+                    <h1>All Categories</h1>
+                </mat-card-title>
+            </mat-card-header>
+        </div>
+<!-- {{categories|json}} -->
+        <mat-list-item *ngFor="let c of categories">
+
+            <mat-icon mat-list-icon>category</mat-icon>
+            <div mat-line style="font-family: 'Courgette', cursive; font-size: 1.2rem; text-decoration: 1px solid underline;">
+                {{c.title}}
+            </div>
+            <div mat-line style="font-size: 0.9rem;">
+                <i>{{c.description}}</i>
+            </div>
+            
+        
+            <div class="buttons">
+                <button class="ml20" mat-raised-button style="background-color:#f57f17; color: white;" 
+                (click)="deleteCategory(c.cid)">Delete</button>
+
+                <button class="ml20" mat-raised-button style="background-color:#e65100; color: white;" 
+                [routerLink]="'/admin-dashboard/category/'+c.cid">Update</button>
+
+                <button class="ml20" mat-raised-button color="warn" 
+                [routerLink]="'/admin-dashboard/category/quiz/'+c.cid">View Quizzes</button>
+            </div>
+
+            <mat-divider></mat-divider>
+        </mat-list-item>
+
+    </mat-list>
+
+    <div class="container mt20 mb20 button">
+        <button mat-raised-button color="warn" routerLink="/admin-dashboard/add-category">Add New Category</button>
+    </div>
+
+</mat-card>
+
+<mat-card class="mt20" *ngIf="!categories.length">
+    <mat-list>
+        <div>
+            <mat-card-header style="display: flex; justify-content: center;">
+                <div mat-card-avatar class='header-image'></div>
+                <mat-card-title style="text-decoration: 1.5px wavy underline; font-family: 'Noto Serif', serif;">
+                    <h1>All Categories</h1>
+                </mat-card-title>
+            </mat-card-header>
+        </div>
+
+        <mat-list-item>
+
+            <div class="ml20" mat-card-avatar class='sad-image'></div>
+            <p class="ml20" style="font-family: 'Courgette', cursive; font-size: 1.5rem; text-decoration: 1px solid underline;">
+                No Categories Avialable!!!
+            </p>
+        
+            <mat-divider></mat-divider>
+
+        </mat-list-item>
+
+    </mat-list>
+</mat-card>
+
+

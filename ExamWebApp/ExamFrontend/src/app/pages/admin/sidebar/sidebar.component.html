@@ -1,0 +1,31 @@
+<mat-card class="main mt20">
+    <mat-action-list>
+        <div mat-subheader>
+            <mat-icon mat-list-icon>menu</mat-icon>
+            <span class="menu ml10"><b>Menu</b></span>
+        </div>
+
+        <button mat-list-item routerLink="/admin-dashboard">
+            <mat-icon mat-list-icon>home</mat-icon><span class="heading"><b>Home</b></span>
+        </button>
+        <button mat-list-item routerLink="/admin-dashboard/profile">
+            <mat-icon mat-list-icon>account_circle</mat-icon><span class="heading"><b>Profile</b></span>
+        </button>
+        <button mat-list-item routerLink="/admin-dashboard/categories">
+            <mat-icon mat-list-icon>list</mat-icon><span class="heading"><b>Categories</b></span>
+        </button>
+        <button mat-list-item routerLink="/admin-dashboard/add-category">
+            <mat-icon mat-list-icon>add_circle_outline</mat-icon><span class="heading"><b>Add Categories</b></span>
+        </button>
+        <button mat-list-item routerLink="/admin-dashboard/quizzes">
+            <mat-icon mat-list-icon>quiz</mat-icon><span class="heading"><b>Quizzes</b></span>
+        </button>
+        <button mat-list-item routerLink="/admin-dashboard/add-quiz">
+            <mat-icon mat-list-icon>add_task</mat-icon><span class="heading"><b>Add Quizzes</b></span>
+        </button>
+        <button mat-list-item (click)="logout()">
+            <mat-icon mat-list-icon>logout</mat-icon><span class="heading"><b>Logout</b></span>
+        </button>
+
+    </mat-action-list>
+</mat-card>

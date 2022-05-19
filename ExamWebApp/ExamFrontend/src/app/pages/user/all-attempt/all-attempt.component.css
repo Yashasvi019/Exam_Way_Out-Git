@@ -1,0 +1,46 @@
+.header-image {
+    background-image: url("../../../../assets/attempts_quiz_icon.png");
+    background-size: cover;
+}
+
+.attempt-image {
+    background-image: url("../../../../assets/question2.png");
+    background-size: cover;
+}
+
+.content3 {
+    border: 1px solid rgb(253, 189, 189);
+    background-color: rgb(245, 200, 200);
+}
+
+.detail {
+    font-family: 'Courgette', cursive;
+    font-size:1rem;
+}
+
+.content2 {
+    font-family: 'Courgette', cursive;
+    font-size:1rem;
+    border: 1px solid rgb(238, 194, 194);
+    background-color: rgb(245, 200, 200);
+    padding: 3px;
+    width: 500px;
+    text-align: center;
+}
+
+.content1 {
+    margin-left: 5%;
+    font-family: 'Cookie', cursive;
+    font-size:2rem;
+}
+
+.sad-image {
+    background-image: url("../../../../assets/sad.png");
+    background-size: cover;
+}
+
+.sad-heading {
+    font-family: 'Courgette', cursive;
+    font-size:1.5rem;
+}
+

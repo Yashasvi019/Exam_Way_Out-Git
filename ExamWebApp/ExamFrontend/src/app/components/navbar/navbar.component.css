@@ -1,0 +1,25 @@
+.main-icon {
+  padding: 2px 2px 2px 2px;
+  font-size: 40px;
+}
+
+.main-heading {
+  color:black;
+  font-family: 'Rampart One', cursive;
+  font-size: 2rem;
+  padding: 2px 2px 2px 2px;
+  margin-left: 20px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.heading {
+  font-family: 'Roboto Slab', serif;
+}
+
+.icon {
+  padding: 0;
+  margin: 0;
+}

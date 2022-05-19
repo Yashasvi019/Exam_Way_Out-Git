@@ -1,0 +1,89 @@
+<mat-card class="mt20">
+    <mat-list>
+        <div class="text-center">
+            <!-- mat-subheader -->
+            <h1 style="text-decoration: 1px solid underline; font-family: 'Noto Serif', serif;">Update Quiz</h1>
+        </div>
+
+<!-- {{quiz | json}} -->
+
+        <mat-card-content>
+
+            <div class="bootstrap-wrapper">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                        <form (submit)="updateQuiz()">
+                            <!-- title field -->
+                            <mat-form-field class="full-width" appearance="fill">
+                                <mat-label>Title</mat-label>
+                                <input required
+                                [(ngModel)]="quiz.title"
+                                 name="title"
+                                type="text" matInput placeholder="Enter title here"/>
+                            </mat-form-field>
+                              <br>
+                            <!-- description field -->
+                            <mat-form-field class="full-width" appearance="fill">
+                                <mat-label>Description</mat-label>
+                                <textarea required
+                                [(ngModel)]="quiz.description"
+                                 name="description" rows="5"
+                                 matInput placeholder="Enter description here"></textarea>
+                            </mat-form-field>
+                              <br>
+
+                              <div class="row">
+                                  <div class="col-md-6">
+                                        <!-- maxMarks field -->
+                                        <mat-form-field class="full-width" appearance="fill">
+                                            <mat-label>Maximum Marks</mat-label>
+                                            <input required
+                                            [(ngModel)]="quiz.maxMarks"
+                                            name="maxMarks"
+                                            type="text" matInput placeholder="Enter maximum marks here"/>
+                                        </mat-form-field>
+                                  </div>
+                                  <div class="col-md-6">
+                                        <!-- numberOfQuestions to be displayed field -->
+                                        <mat-form-field class="full-width" appearance="fill">
+                                            <mat-label>Number Of Questions</mat-label>
+                                            <input required
+                                            [(ngModel)]="quiz.numberOfQuestions"
+                                            name="numberOfQuestions"
+                                            type="text" matInput placeholder="Enter number of questions here"/>
+                                        </mat-form-field>
+                                  </div>
+                                </div>
+    
+                            <!-- active field -->
+                            <mat-slide-toggle
+                                name="active"
+                                [(ngModel)]="quiz.active"
+                                class="mb10">
+                                Publish Status
+                            </mat-slide-toggle>
+
+                            <mat-form-field class="full-width mt20" appearance="fill">
+                                <mat-label>Category</mat-label>
+                                <mat-select name="category" [(ngModel)]="quiz.category.cid" matNativeControl required>
+                                  <mat-option *ngFor="let c of categories" [value]="c.cid">{{ c.title }}</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                            <br>
+
+                            <div class="container mt20 mb10 button">
+                                <button class="mr20" mat-raised-button color="warn" type="submit">Update</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </mat-card-content>
+
+    </mat-list>
+
+</mat-card>
+
+

@@ -1,0 +1,30 @@
+.heading {
+    display: flex; 
+    justify-content: center;
+}
+
+.header-image {
+    background-image: url("../../../assets/profile_icon.png");
+    background-size: cover;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table tr td {
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    width: 50%;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.button {
+   display: flex;
+   justify-content: center;
+}

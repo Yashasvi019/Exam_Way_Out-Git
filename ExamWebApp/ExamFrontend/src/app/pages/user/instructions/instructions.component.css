@@ -1,0 +1,9 @@
+.button {
+    text-align: center;
+}
+
+.main-heading {
+    text-decoration: 1.5px solid underline; 
+    font-family: 'Noto Serif', serif;
+    font-size: 1.5rem;
+}

@@ -1,0 +1,54 @@
+.heading {
+    color: #d30c0c;
+    font-family:'Irish Grover', cursive;
+    font-size: 2.5rem;
+    margin-top: 80px;
+}
+
+.sub-heading {
+    color: #4e342e;
+    font-family:'Dancing Script', cursive;
+    font-size: 1.5rem;
+}
+
+.content {
+    color: black;
+    font-family:'Zen Antique Soft', serif;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+.social-heading {
+    margin-top: 30px;
+    padding: 2px 2px 2px 2px;
+    color: #37474f;
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+.social-icon, a, img{
+    height:50px;
+    width: 50px;
+    margin: 3px 3px 3px 3px;
+    padding: 3px 3px 3px 3px;
+}
+.social-icon {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-heading {
+    margin-top: 30px;
+    padding: 2px 2px 2px 2px;
+    color: #37474f;
+    font-family: 'Balsamiq Sans', cursive;
+    margin-bottom: 0px;
+}
+
+.icon, p, a {
+    text-decoration: none;
+    color: black;
+}
+
+.hover:hover {
+    color: #b85757;
+}

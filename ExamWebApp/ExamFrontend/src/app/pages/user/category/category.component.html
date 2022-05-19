@@ -1,0 +1,44 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+
+        <mat-card class="mt20">
+            <mat-card-header style="text-decoration: 1.5px wavy underline; font-family: 'Noto Serif', serif;">
+                <div mat-card-avatar class='header-image'></div>
+                <mat-card-title>
+                    <h1>Categories Available</h1>
+                </mat-card-title>
+            </mat-card-header>
+        </mat-card>
+
+        <!-- {{categories | json}} -->
+
+        <div class="row mt20" *ngIf="categories">
+
+            <div class="col-md-6" *ngFor="let c of categories">
+                
+                <mat-card class="mb10">
+
+                    <mat-card-header>
+                        <div mat-card-avatar class='category-icon'></div>
+                        <mat-card-title style="text-decoration: 1px solid underline; font-family:'Courgette', cursive;font-size: 1.5rem;">
+                            {{c.title}}
+                        </mat-card-title>
+                    </mat-card-header>
+                    
+                    <mat-card-content style="font-family: 'Kalam', cursive; font-size: 1rem;">
+                        <p class="truncate">{{c.description}}</p>
+                    </mat-card-content>
+
+                    <div class="button">
+                        <button class="mt5" mat-raised-button color="warn" 
+                        [routerLink]="'/user-dashboard/quiz/'+c.cid">View Quizzes</button>
+                    </div>
+
+                </mat-card>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+

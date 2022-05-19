@@ -1,0 +1,21 @@
+.button {
+    text-align: center;
+}
+
+.truncate {
+    display: block;
+    white-space: nowrap;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.header-image {
+    background-image: url("../../../../assets/book-stack.png");
+    background-size: cover;
+}
+
+.category-icon {
+    background-image: url("../../../../assets/category_icon.png");
+    background-size: cover;
+}

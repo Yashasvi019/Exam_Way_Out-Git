@@ -1,0 +1,37 @@
+.header-image {
+    background-image: url("../../../assets/profile_icon.png");
+    background-size: cover;
+}
+
+.profile-image {
+    max-width: 120px;
+    max-height: 120px;
+    border: 2px solid black;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.profile-name {
+    font-size: 1.9rem;
+    text-align: center;
+    text-decoration: 2px wavy underline;
+    text-transform: capitalize;
+    font-family: 'Dancing Script', cursive;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table tr td {
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    width: 50%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.button {
+    text-align: center;
+}

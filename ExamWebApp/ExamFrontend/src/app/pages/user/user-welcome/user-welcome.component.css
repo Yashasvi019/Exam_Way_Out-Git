@@ -1,0 +1,22 @@
+.truncate {
+    display: block;
+    white-space: nowrap;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.header-image {
+    background-image: url("../../../../assets/ideas.png");
+    background-size: cover;
+}
+
+.quiz-icon {
+    background-image: url("../../../../assets/quiz_icon.png");
+    background-size: cover;
+}
+
+.no-quiz-image {
+    background-image: url("../../../../assets/sad.png");
+    background-size: cover;
+}

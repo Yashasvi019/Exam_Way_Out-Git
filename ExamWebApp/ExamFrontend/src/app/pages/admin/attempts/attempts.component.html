@@ -1,0 +1,118 @@
+<div class="bootstrap-wrapper"  *ngIf="attempts.length">
+    <div class="container">
+
+<!-- {{attempts|json}} -->
+
+        <mat-card class="mt20">
+
+            <mat-card-header style="display: flex; justify-content: center;">
+                <div mat-card-avatar class='header-image'></div>
+                <mat-card-title >
+                    <h1>
+                        <span style="text-decoration: 1.5px wavy underline; font-family: 'Noto Serif', serif;">{{attempts[0].quiz.title}}</span> 
+                        <span style="color: #ffff00; padding: 2px 10px 2px 10px; background-color: #ff5252;" class="ml10">
+                            <b>{{attempts.length}}</b>
+                        </span>
+                    </h1>
+                </mat-card-title>
+                <mat-card-subtitle>
+                    <h3 style="text-decoration: 1px solid underline; font-family: 'Noto Serif', serif;">
+                        <b> <i>{{attempts[0].quiz.category.title}} </i> </b>
+                    </h3>
+                </mat-card-subtitle>
+            </mat-card-header>
+
+            <mat-card-content>
+                <div class="content1">
+                    <p>{{attempts[0].quiz.description}}</p>
+                </div>
+            </mat-card-content>
+
+        </mat-card>
+
+        <div class="row mt10">
+            <div class="col-md-12">
+                <div *ngFor="let attempt of attempts;">
+                     
+                        <mat-card class="mt10">
+                    
+                            <mat-card-header>
+                                <div mat-card-avatar class='attempt-image'></div>
+                                <mat-card-title class="quiz-heading">
+                                    <h1 style="color: #ff4848;font-family: 'Dancing Script', cursive; font-size: 1.7rem;">
+                                        {{attempt.user.firstName}} {{attempt.user.lastName}} <b><i>({{attempt.user.username}})</i></b>
+                                    </h1>
+                                </mat-card-title>
+                                <mat-card-subtitle>
+                                    <h3 style="font-family: 'Courgette', cursive; font-size: 1.2rem;">
+                                        <b> <i>{{attempt.user.email}} </i> </b>
+                                    </h3>
+                                </mat-card-subtitle>
+                            </mat-card-header>
+
+                            <mat-card-content class="content">
+
+                                <p class="content2"><b>Attempted Date and Time: {{attempt.dateTime}}</b> </p>
+                                <p class="content3"> <span style="margin-left: 10%; ;" class="detail mt5"> Total Marks: <b>{{attempt.totalMarks}}</b> </span>
+                                                    <span style="margin-left: 20%;" class="detail">  Marks Got: <b>{{attempt.marksGot}}</b> </span> <br> 
+                                                    <span style="margin-left: 28%;" class="detail" > Total Questions: <b>{{attempt.totalQuestions}}</b> </span> <br>
+                                                    <span style="margin-left: 10%;" class="detail" > Attempted Answers: <b>{{attempt.attemptedAnswers}}</b> </span>
+                                                    <span style="margin-left: 16%;" class="detail" > Unattempted Answers: <b>{{attempt.unattemptedAnswers}}</b> </span> <br>
+                                                    <span style="margin-left: 10%;" class="detail" > Correct Answers: <b>{{attempt.correctAnswers}}</b> </span>
+                                                    <span style="margin-left: 18%;" class="detail mb5"> Incorrect Questions: <b>{{attempt.incorrectAnswers}}</b> </span> </p>
+                                    
+                            </mat-card-content>
+
+                         </mat-card>
+                   
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="bootstrap-wrapper" *ngIf="attempts.length==0">
+    <div class="container">
+
+<!-- {{quiz|json}} -->
+
+        <mat-card class="mt20">
+
+            <mat-card-header style="display: flex; justify-content: center;">
+                <div mat-card-avatar class='header-image'></div>
+                <mat-card-title>
+                    <h1 style="text-decoration: 1.5px wavy underline; font-family: 'Noto Serif', serif;">{{quiz.title}} 
+                        <span style="color: #ffff00; padding: 2px 10px 2px 10px; background-color: #ff5252;" class="ml10">
+                            <b>{{attempts.length}}</b>
+                        </span>
+                    </h1>
+                </mat-card-title>
+                <mat-card-subtitle>
+                    <h3 style="text-decoration: 1px solid underline; font-family: 'Noto Serif', serif;">
+                        <b> <i>{{quiz.category.title}} </i> </b>
+                    </h3>
+                </mat-card-subtitle>
+            </mat-card-header>
+
+            <mat-card-content>
+                <div class="content1">
+                    <p>{{quiz.description}}</p>
+                </div>
+            </mat-card-content>
+
+        </mat-card>
+
+        <div class="row mt10">
+            <div class="col-md-12">
+                <mat-card class="mt10">
+                    <mat-card-header>
+                        <div mat-card-avatar class='sad-image'></div>
+                        <h1 class="sad-heading">No user have attempted this quiz till now.....</h1>
+                   </mat-card-header>
+                </mat-card>
+            </div>
+        </div>
+
+    </div>
+</div>

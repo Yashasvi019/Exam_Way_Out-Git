@@ -1,0 +1,108 @@
+<mat-card class="mt20 mr20" *ngIf="user">
+    
+    <div class="mt10 mb20 heading">
+        <mat-card-header>
+            <div mat-card-avatar class='header-image'></div>
+            <mat-card-title>
+                <h1 style="font-family: 'Noto Serif', serif; text-decoration: underline ;">Update Your Profile Details</h1>
+            </mat-card-title>
+        </mat-card-header>
+    </div>
+
+<!-- {{user | json}} -->
+
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-10 offset-md-1 mb20 mt10">
+
+                        <form *ngIf="user" (ngSubmit)="formSubmit()" >
+
+                            <!-- E-mail-id -->
+                            <mat-form-field class="full-width" appearance="fill">
+                                <mat-label>Email Id</mat-label>
+                                <input required
+                                [(ngModel)]="user.email" name="email"
+                                type="email" matInput placeholder="Enter here">
+                            </mat-form-field>
+                              <br>
+                              <!-- First Name field -->
+                            <mat-form-field class="full-width" appearance="fill">
+                                <mat-label>First Name</mat-label>
+                                <input required
+                                [(ngModel)]="user.firstName" name="firstName"
+                                matInput placeholder="Enter here">
+                            </mat-form-field>
+                            <br>
+                            <!-- Last Name field -->
+                            <mat-form-field class="full-width" appearance="fill">
+                                <mat-label>Last Name</mat-label>
+                                <input required
+                                [(ngModel)]="user.lastName" name="lastName"
+                                matInput placeholder="Enter here">
+                            </mat-form-field>
+                            <br>
+                            <!-- Username field -->
+                            <mat-form-field class="full-width" appearance="fill">
+                                <mat-label>Username</mat-label>
+                                <input required
+                                [(ngModel)]="user.username" name="username"
+                                matInput placeholder="Enter here">
+                                <mat-hint>Username must be unique !</mat-hint>
+                            </mat-form-field>
+                            <br>
+                            <!-- Phone Number field -->
+                            <mat-form-field class="full-width" appearance="fill">
+                                <mat-label>Phone Number</mat-label>
+                                <input required
+                                [(ngModel)]="user.phoneNumber" name="phoneNumber"
+                                matInput placeholder="Enter here">
+                            </mat-form-field>
+                            <br>
+                            <!-- Gender -->
+                            <mat-form-field class="full-width" appearance="fill">
+                                <mat-label>Gender</mat-label>
+                                <select [(ngModel)]="user.gender" name="gender" matNativeControl required>
+                                <option value="F">Female</option>
+                                <option value="M">Male</option>
+                                </select>
+                            </mat-form-field>
+                            <br>
+                            <br>                  
+                            <!-- About field -->
+                            <mat-label>About</mat-label>
+                            <textarea 
+                            [(ngModel)]="user.about" name="about"
+                            style="margin-top: 5px; height:auto" rows="5" placeholder="Enter here" class="md-textarea form-control" class="full-width"></textarea>
+                            <br>
+
+                            <div class="button mb20 mt20" >
+
+                                <button class="mr20"
+                                type="submit"
+                                mat-raised-button 
+                                style="background-color:#f57f17; color: white;"
+                                >Update</button>
+
+                                <button class="ml20"
+                                mat-raised-button 
+                                style="background-color:#e97612; color: white;"
+                                >Forgot Password?</button>
+                                <!-- (click)="ForgetPasswordClicked()" -->
+
+                            </div>
+                        
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </mat-card-content>
+
+</mat-card>

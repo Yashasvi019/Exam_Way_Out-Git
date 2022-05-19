@@ -1,0 +1,44 @@
+<mat-toolbar style="background-color:#ff5252">
+     <a mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon class="main-icon ml20">menu_book</mat-icon>
+     </a>
+     <!-- routerLink="/" -->
+    <span class="main-heading"><b>EXAM WAY OUT</b></span>
+    <span class="example-spacer"></span>
+    
+    <ng-container *ngIf='!isLoggedIn'>
+        <mat-icon class="icon">login</mat-icon>
+        <a class="heading"
+        [routerLink]="'/login'"  mat-icon-button class="mr20">
+        Login  <!-- href="/login" <mat-icon>login</mat-icon> -->
+        </a>
+    </ng-container>
+
+    <ng-container *ngIf='!isLoggedIn'>
+        <mat-icon class="icon">how_to_reg</mat-icon>
+        <a class="heading"
+        [routerLink]="'/signup'" mat-icon-button class="mr20">
+        Register <!--  href="/signup" <mat-icon>share</mat-icon> -->
+        </a>
+    </ng-container>
+    
+    <ng-container *ngIf='isLoggedIn'>
+        <mat-icon class="icon">logout</mat-icon>
+        <a class="heading"
+        (click)="logout()"
+        mat-icon-button class="mr20">
+        Logout <!--  href="/signup" <mat-icon>share</mat-icon> -->
+        </a>
+    </ng-container>
+    
+    <ng-container *ngIf='isLoggedIn && user'>
+        <mat-icon class="icon">person</mat-icon>
+        <a class="heading"
+        mat-icon-button (click)="ProfilePage()" 
+        class="mr20">
+        {{ user.username }}
+        <!--  href="/signup" <mat-icon>share</mat-icon> -->
+        </a>
+    </ng-container>
+    
+</mat-toolbar>

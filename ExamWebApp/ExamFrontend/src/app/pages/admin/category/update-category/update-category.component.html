@@ -1,0 +1,50 @@
+<mat-card class="mt20">
+    <mat-list>
+        <div class="text-center">
+            <!-- mat-subheader -->
+            <h1 style="text-decoration: 1px solid underline; font-family: 'Noto Serif', serif;">Update Category</h1>
+        </div>
+
+<!-- {{category | json}} -->
+
+        <mat-card-content>
+
+            <div class="bootstrap-wrapper">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                        <form (submit)="updateCategory()">
+                            <!-- title field -->
+                            <mat-form-field class="full-width" appearance="fill">
+                                <mat-label>Title</mat-label>
+                                <input required
+                                 name="title"
+                                 [(ngModel)]="category.title"
+                                type="text" matInput placeholder="Enter title here"/>
+                            </mat-form-field>
+                              <br>
+                            <!-- description field -->
+                            <mat-form-field class="full-width" appearance="fill">
+                                <mat-label>Description</mat-label>
+                                <textarea required
+                                name="description"
+                                matInput placeholder="Enter description here"
+                                rows="10"
+                                [(ngModel)]="category.description"
+                                ></textarea>
+                            </mat-form-field>
+                              <br>
+
+                            <div class="container mt20 mb10 button">
+                                <button class="mr20" mat-raised-button color="warn" type="submit">Update</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </mat-card-content>
+
+    </mat-list>
+
+</mat-card>

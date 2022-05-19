@@ -1,0 +1,19 @@
+.header-image {
+    background-image: url("../../../../../assets/question2.png");
+    background-size: cover;
+}
+
+.main-heading {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    display: flex;
+    justify-content: right;
+}
+
+.sad-image {
+    background-image: url("../../../../../assets/sad.png");
+    background-size: cover;
+}

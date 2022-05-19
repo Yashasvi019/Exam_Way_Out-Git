@@ -1,0 +1,31 @@
+.header-image {
+    background-image: url("../../../../assets/display_users_icon.png");
+    background-size: cover;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-right: 20px;
+}
+
+.table tr th {
+    padding: 10px;
+    border: 1px solid #575656;
+    text-align: center;
+    text-decoration: 1px solid underline;
+    font-family: 'Noto Serif', serif;
+    font-family: 1rem;
+}
+
+.table tr td {
+    padding: 10px;
+    border: 1px solid #575656;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+    font-size:1rem;
+}
+
+.button {
+    margin-left: 45%;
+}

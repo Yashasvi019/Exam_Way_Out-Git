@@ -1,0 +1,85 @@
+<div class="bootstrap-wrapper" *ngIf="userid_attempt.length">
+    <div class="container">
+
+<!-- {{userid_attempt|json}} -->
+<!-- {{userId}} -->
+
+        <mat-card class="mt20">
+            <mat-card-header>
+                <div mat-card-avatar class='header-image'></div>
+                <mat-card-title style="text-decoration: 1.5px wavy underline; font-family: 'Noto Serif', serif;">
+                    <h1>Your All Attempts</h1>
+                </mat-card-title>
+            </mat-card-header>
+        </mat-card>
+
+        <div class="row mt10">
+            <div class="col-md-12">
+                <mat-card *ngFor="let attempt of userid_attempt" class="mt10">
+
+                    <mat-card-header>
+                        <div mat-card-avatar class='attempt-image'></div>
+                        <mat-card-title>
+                            <h1 style="text-decoration: 1px solid underline; font-family:'Courgette', cursive; font-size: 1.5rem;">{{attempt.quiz.title}}</h1>
+                        </mat-card-title>
+                        <mat-card-actions style="margin-left: 60%;">
+                            <button mat-raised-button color="warn" (click)="delete(attempt.attemptid)">Delete</button>
+                        </mat-card-actions>
+                        <mat-card-subtitle>
+                            <h3><b> <i>{{attempt.quiz.category.title}} </i> </b></h3>
+                        </mat-card-subtitle>
+                    </mat-card-header>
+
+                    <mat-card-content class="content">
+
+                        <p class="content1">{{attempt.quiz.description}}</p>
+
+                        <p class="content2"><b>Attempted Date and Time: <i>{{attempt.dateTime}}</i></b> </p>
+                        
+                        <p class="content3"> <span style="margin-left: 10%; ;" class="detail mt5"> Total Marks: <b>{{attempt.totalMarks}}</b> </span>
+                                            <span style="margin-left: 20%;" class="detail">  Marks Got: <b>{{attempt.marksGot}}</b> </span> <br> 
+                                            <span style="margin-left: 28%;" class="detail" > Total Questions: <b>{{attempt.totalQuestions}}</b> </span> <br>
+                                            <span style="margin-left: 10%;" class="detail" > Attempted Answers: <b>{{attempt.attemptedAnswers}}</b> </span>
+                                            <span style="margin-left: 16%;" class="detail" > Unattempted Answers: <b>{{attempt.unattemptedAnswers}}</b> </span> <br>
+                                            <span style="margin-left: 10%;" class="detail" > Correct Answers: <b>{{attempt.correctAnswers}}</b> </span>
+                                            <span style="margin-left: 18%;" class="detail mb5"> Incorrect Questions: <b>{{attempt.incorrectAnswers}}</b> </span> </p>
+                            
+                    </mat-card-content>
+
+                    
+                    
+                </mat-card>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="bootstrap-wrapper" *ngIf="!userid_attempt.length">
+    <div class="container">
+
+        <mat-card class="mt20">
+            <mat-card-header style="text-decoration: 1.5px wavy underline; font-family: 'Noto Serif', serif;">
+                <div mat-card-avatar class='header-image'></div>
+                <mat-card-title>
+                    <h1>Your All Attempts</h1>
+                </mat-card-title>
+            </mat-card-header>
+        </mat-card>
+
+        <div class="row mt10">
+            <div class="col-md-12">
+
+                <mat-card class="mt10">
+                    <mat-card-header>
+                        <div mat-card-avatar class='sad-image'></div>
+                        <h1 class="sad-heading">You have not attempted any quiz till now.....</h1>
+                   </mat-card-header>
+                </mat-card>
+
+            </div>
+        </div>
+
+    </div>
+</div>

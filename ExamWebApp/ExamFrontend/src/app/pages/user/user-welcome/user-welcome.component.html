@@ -1,0 +1,67 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+
+        <mat-card class="mt20">
+            <mat-card-header>
+                <div mat-card-avatar class='header-image'></div>
+                <mat-card-title>
+                    <h1 style="text-decoration: 1.5px wavy underline; font-family: 'Noto Serif', serif;">Quizzes Available</h1>
+                </mat-card-title>
+            </mat-card-header>
+        </mat-card>
+
+        <div class="row mt20" *ngIf="quizzes">
+
+            <div class="col-md-11" *ngFor="let q of quizzes">
+                
+                <mat-card class="mb10">
+
+                    <mat-card-header>
+                        <div mat-card-avatar class='quiz-icon'></div>
+                        <mat-card-title style="text-decoration: 1px solid underline; font-family:'Courgette', cursive;font-size: 1.5rem;">
+                            {{q.title}}
+                        </mat-card-title>
+                        <mat-card-subtitle>
+                            <b><i>{{q.category.title}}</i></b>
+                        </mat-card-subtitle>
+                    </mat-card-header>
+                    
+                    <mat-card-content style="font-family: 'Kalam', cursive; font-size: 1rem;">
+                        <p class="truncate">{{q.description}}</p>
+                    </mat-card-content>
+
+                    <div>
+                        
+                        <button class="ml20 mt10" mat-raised-button style="background-color:#e65100; color: white;" 
+                        [routerLink]="'/user-dashboard/instructions/'+q.quizid">Start</button>
+
+                        <button class="ml20 mt10" mat-raised-button style="background-color:#e65100; color: white;" 
+                        [routerLink]="'/user-dashboard/attempt/'+q.quizid">Attempts</button>
+
+                        <button class="ml20 mt10" mat-flat-button style="background-color:#f57f17; color: white;">
+                            M.M: {{ q.maxMarks }}</button>
+                
+                        <button class="ml20 mt10" mat-flat-button style="background-color:#f57f17; color: white;">
+                            Questions: {{ q.numberOfQuestions }}</button>
+
+                    </div>
+
+                </mat-card>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-10" *ngIf="quizzes.length==0">
+            <mat-card>
+                <mat-card-header>
+                    <div mat-card-avatar class='no-quiz-image'></div>
+                    <h1>No Active Quizzes are there in this category.....</h1>
+                </mat-card-header>
+            </mat-card>
+        </div>
+
+    </div>
+</div>
+
+

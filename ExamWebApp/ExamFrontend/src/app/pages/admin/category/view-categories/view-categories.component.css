@@ -1,0 +1,12 @@
+.header-image {
+    background-image: url("../../../../../assets/book-stack.png");
+    background-size: cover;
+}
+.button {
+    text-align: center;
+}
+
+.sad-image {
+    background-image: url("../../../../../assets/sad.png");
+    background-size: cover;
+}
